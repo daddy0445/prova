@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     ['COMMESSA', 'DATA', 'COMMENTO'],
                     [commessa, dataNecessita, commento],
                     [],
-                    ['ATTREZZATURA', 'QUANTITÀ', 'CODICE NAV']
+                    ['ATTREZZATURA', 'QUANTITÀ', 'CODICE NAV', 'mag.Marrubiu', 'mag.Mairano', 'Altro']
                 ];
             
                 document.querySelectorAll('.attrezzatura-row').forEach(row => {
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     )?.codice || '';
                     
                     if (attrezzatura && quantita) {
-                        wsData.push([attrezzatura, quantita, codiceNav]);
+                        wsData.push([attrezzatura, quantita, codiceNav, '', '', '']);
                     }
                 });
             
@@ -200,6 +200,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                 ws['!cols'] = [
                     {wch: 40},
                     {wch: 12},
+                    {wch: 15},
+                    {wch: 15},
+                    {wch: 15},
                     {wch: 15}
                 ];
             
