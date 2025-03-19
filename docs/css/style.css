@@ -1,0 +1,113 @@
+/* Stili personalizzati per l'applicazione */
+
+/* Animazione per il caricamento della pagina */
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Stili per la transizione delle righe della tabella */
+.attrezzatura-row {
+    transition: all 0.3s ease;
+}
+
+/* Effetto hover sulle righe della tabella */
+.attrezzatura-row:hover {
+    transform: translateX(5px);
+}
+
+/* Stili per il modale */
+#itemModal {
+    backdrop-filter: blur(4px);
+}
+
+/* Animazione per l'aggiunta di nuove righe */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.attrezzatura-row {
+    animation: slideDown 0.3s ease-out;
+}
+
+/* Stili per i messaggi di errore */
+.error-message {
+    color: #dc2626;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Stili per i pulsanti disabilitati */
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Stili per l'input di ricerca */
+#searchInput:focus + .fas.fa-search {
+    color: #2563eb;
+}
+
+/* Stili per il focus degli input */
+input:focus {
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* Stili per il datalist */
+input[list]::-webkit-calendar-picker-indicator {
+    color: #6b7280;
+}
+
+/* Stili per il loading spinner */
+.loading-spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #2563eb;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Stili per il responsive design */
+@media (max-width: 640px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .attrezzatura-row {
+        padding: 0.75rem;
+    }
+}
+
+/* Stili per la stampa */
+@media print {
+    .no-print {
+        display: none;
+    }
+    
+    body {
+        font-size: 12pt;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: none;
+    }
+}
