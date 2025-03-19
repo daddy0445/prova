@@ -79,6 +79,21 @@ function deleteItem(nome) {
     renderTable();
 }
 
+// Aggiungi questa funzione per creare uno stile di cella con bordi
+function createBorderedCell(value) {
+    return {
+        v: value,
+        s: {
+            border: {
+                top: { style: "thin", color: { auto: 1 } },
+                right: { style: "thin", color: { auto: 1 } },
+                bottom: { style: "thin", color: { auto: 1 } },
+                left: { style: "thin", color: { auto: 1 } }
+            }
+        }
+    };
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
     await loadAttrezzatureFromCSV();
     
@@ -196,7 +211,15 @@ document.addEventListener('DOMContentLoaded', async () => {
                         const mairanoCell = `E${wsData.length + 1}`;
                         const altroCell = `F${wsData.length + 1}`;
                         const differenzaFormula = `B${wsData.length + 1} - (${marrubiuCell} + ${mairanoCell} + ${altroCell})`;
-                        wsData.push([attrezzatura, quantita, codiceNav, 0, 0, 0, { f: differenzaFormula }]);
+                        wsData.push([
+                            createBorderedCell(attrezzatura), 
+                            createBorderedCell(quantita), 
+                            createBorderedCell(codiceNav), 
+                            createBorderedCell(0),
+                            createBorderedCell(0),
+                            createBorderedCell(0),
+                            createBorderedCell({ f: differenzaFormula })
+                        ]);
                     }
                 });
             
