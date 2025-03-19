@@ -195,8 +195,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                         const marrubiuCell = `D${wsData.length + 1}`;
                         const mairanoCell = `E${wsData.length + 1}`;
                         const altroCell = `F${wsData.length + 1}`;
-                        const differenzaFormula = `C${wsData.length + 1} - (${marrubiuCell} + ${mairanoCell} + ${altroCell})`;
-                        wsData.push([attrezzatura, quantita, codiceNav, '', '', '', { f: differenzaFormula }]);
+                        const differenzaFormula = `B${wsData.length + 1} - (${marrubiuCell} + ${mairanoCell} + ${altroCell})`;
+                        wsData.push([attrezzatura, quantita, codiceNav, 0, 0, 0, { f: differenzaFormula }]);
                     }
                 });
             
